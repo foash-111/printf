@@ -38,6 +38,7 @@ void print_string(va_list pa)
 }
 
 
+
 /**
  * _printf - variadic function to print anything
  * @format: pointer to argument
@@ -51,8 +52,7 @@ int _printf(const char *format, ...)
 	int i = 0, j = 0, counter = 0;
 op_t identifier[] = {
 		{"c", print_char},
-		{"s", print_string},
-		{"%", print_char}
+		{"s", print_string}
 	};
 
 	va_start(pa, format);
@@ -61,13 +61,13 @@ op_t identifier[] = {
 	while (format[i])
 	{
 		if (format[i] != '%')
-		{
-			_putchar(format[i]), counter++;
-		}
+			_putchar(format[i]);
+		else if (format[i] == '%' && format[i + 1] == '%')
+			_putchar(format[i + 1]), i++;
 		else
 		{
 			j = 0;
-			while (j < 3)
+			while (j < 2)
 			{
 				if (format[i + 1] == *identifier[j].ch)
 				{
@@ -76,15 +76,14 @@ op_t identifier[] = {
 				}
 				j++;
 			}
-				if (j == 3)
-				{
+				if (j == 2)
 				_putchar(format[i]), _putchar(format[i + 1]), i++;
-				}
-			counter++;
 		}
-	i++;
+	i++, counter++;
 	}
 	}
+	else
+	_putchar('\0');
 	va_end(pa);
 return (counter);
 }
