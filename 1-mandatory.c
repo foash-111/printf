@@ -6,11 +6,12 @@
  * Return: (void)
  */
 
-void print_char(va_list pa)
+int print_char(va_list pa)
 {
 	char ptr = va_arg(pa, int);
 
 	_putchar(ptr);
+	return (1);
 
 }
 
@@ -19,7 +20,7 @@ void print_char(va_list pa)
  * @pa: pointer to argument
  * Return: (void)
  */
-void print_string(va_list pa)
+int print_string(va_list pa)
 {
 	char *ptr;
 	int i = 0;
@@ -34,6 +35,16 @@ void print_string(va_list pa)
 		i++;
 	}
 	}
+	else
+	{
+		ptr = "(null)";
+		while (ptr[i])
+		{
+			_putchar(ptr[i]);
+			i++;
+		}
+	}
+return (i);
 
 }
 
@@ -50,10 +61,7 @@ int _printf(const char *format, ...)
 {
 	va_list pa;
 	int i = 0, j = 0, counter = 0;
-op_t identifier[] = {
-		{"c", print_char},
-		{"s", print_string}
-	};
+op_t identifier[] = {{"c", print_char}, {"s", print_string}};
 
 	va_start(pa, format);
 	if (format)
@@ -61,9 +69,9 @@ op_t identifier[] = {
 	while (format[i])
 	{
 		if (format[i] != '%')
-			_putchar(format[i]);
+			_putchar(format[i]), counter++;
 		else if (format[i] == '%' && format[i + 1] == '%')
-			_putchar(format[i + 1]), i++;
+			_putchar(format[i + 1]), i++, counter++;
 		else
 		{
 			j = 0;
@@ -71,15 +79,15 @@ op_t identifier[] = {
 			{
 				if (format[i + 1] == *identifier[j].ch)
 				{
-					identifier[j].f(pa), i++;
+					counter += identifier[j].fun(pa), i++;
 					break;
 				}
 				j++;
 			}
 				if (j == 2)
-				_putchar(format[i]), _putchar(format[i + 1]), i++;
+				_putchar(format[i]), _putchar(format[i + 1]), i++, counter++;
 		}
-	i++, counter++;
+	i++;
 	}
 	}
 	else

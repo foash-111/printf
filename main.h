@@ -9,12 +9,12 @@
 /**
  * struct operator - struct
  * @ch: char
- * @f: pointer to function
+ * @fun: pointer to function
  */
 typedef struct operator
 {
 	char *ch;
-	void (*f)(va_list);
+	int (*fun)(va_list);
 } op_t;
 
 int _printf(const char *format, ...);
