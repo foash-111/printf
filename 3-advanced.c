@@ -38,7 +38,9 @@ int (*ptr)(int, int) = _pow_recursion;
 
 	temp = va_arg(pa, int);
 
-
+if (pa == NULL)
+	return (0);
+	
 while (i < temp)
 {
 	i += ptr(2, j);
