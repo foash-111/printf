@@ -16,6 +16,21 @@ int print_char(va_list pa)
 }
 
 /**
+ * print_percentage - ...
+ * @pa: pointer to argument
+ * Return: (void)
+ */
+
+int print_percentage(va_list pa)
+{
+	(void) pa;
+
+	_putchar('%');
+	return (1);
+
+}
+
+/**
  * print_string - ...
  * @pa: pointer to argument
  * Return: (void)
@@ -61,21 +76,22 @@ int _printf(const char *format, ...)
 {
 	va_list pa;
 	int i = 0, j = 0, counter = 0;
-op_t identifier[] = {{"c", print_char}, {"s", print_string}};
+op_t identifier[] = {{"c", print_char}, {"s", print_string},
+{"%", print_percentage}};
 
 	va_start(pa, format);
-	if (format)
+	if (format == NULL)
+	return (-1);
+	else
 	{
 	while (format[i])
 	{
 		if (format[i] != '%')
 			_putchar(format[i]), counter++;
-		else if (format[i] == '%' && format[i + 1] == '%')
-			_putchar(format[i + 1]), i++, counter++;
 		else
 		{
 			j = 0;
-			while (j < 2)
+			while (j < 3)
 			{
 				if (format[i + 1] == *identifier[j].ch)
 				{
@@ -84,14 +100,12 @@ op_t identifier[] = {{"c", print_char}, {"s", print_string}};
 				}
 				j++;
 			}
-				if (j == 2)
-				_putchar(format[i]), _putchar(format[i + 1]), i++, counter++;
+			if (j == 3)
+			return (-1);
 		}
 	i++;
 	}
 	}
-	else
-	_putchar('\0');
 	va_end(pa);
 return (counter);
 }
