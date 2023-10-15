@@ -33,7 +33,7 @@ else
 
 int print_binary(va_list pa)
 {
-	unsigned int temp = 0, i = 0, j = 0, count = 0, result = 0;
+	int temp = 0, i = 0, j = 0, count = 0, result = 0;
 int (*ptr)(int, int) = _pow_recursion;
 
 	temp = va_arg(pa, int);
