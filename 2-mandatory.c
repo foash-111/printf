@@ -20,12 +20,10 @@ char *ptr;
 		number /= 10;
 		len++;
 	}
-
 	ptr = malloc((sizeof(char) * len) + 1 );
 
 	if(ptr == NULL)
 	return (0);
-
 while(i < len)
 {
 	ptr[i] = (temp % 10) + '0';
@@ -42,4 +40,15 @@ while (j < len)
 }
 free(ptr);
 return (len);
+}
+
+/**
+ * print_INT_MAX -...
+ * @pa:pointer to argument
+ * Return: integer
+*/
+int print_INT_MAX(va_list pa)
+{
+    int number = va_arg(pa, int);
+    
 }
