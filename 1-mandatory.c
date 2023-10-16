@@ -12,11 +12,7 @@ int print_char(va_list pa)
 
 	if (pa == NULL)
 		return (-1);
-	if(ptr == 0)
-	{
-	_putchar('\0');
-	return(0);
-	}
+
 	_putchar(ptr);
 	return (1);
 
