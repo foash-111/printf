@@ -10,6 +10,8 @@ int print_char(va_list pa)
 {
 	int ptr = va_arg(pa, int);
 
+	if (pa == NULL)
+		return (-1);
 	_putchar(ptr);
 	return (1);
 
