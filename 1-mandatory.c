@@ -82,12 +82,13 @@ int _printf(const char *format, ...)
 	va_list pa;
 	int i = 0, j = 0, counter = 0;
 op_t identifier[] = {{"c", print_char}, {"s", print_string},
-{"%", print_percentage},
-{"b", print_binary}};
+{"%", print_percentage}};
 
 	va_start(pa, format);
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	if (format == NULL)
 	return (-1);
+	else if (format[0] == '%' && format[1] == '\0')
+	return (0);
 	else
 	{
 	while (format[i])
@@ -97,7 +98,7 @@ op_t identifier[] = {{"c", print_char}, {"s", print_string},
 		else
 		{
 			j = 0;
-			while (j < 5)
+			while (j < 3)
 			{
 				if (format[i + 1] == *identifier[j].ch)
 				{
@@ -106,7 +107,7 @@ op_t identifier[] = {{"c", print_char}, {"s", print_string},
 				}
 				j++;
 			}
-			if (j == 5)
+			if (j == 3)
 			return (-1);
 		}
 	i++;
