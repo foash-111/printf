@@ -33,14 +33,15 @@ else
 
 int print_binary(va_list pa)
 {
-	int temp = 0, i = 0, j = 0, count = 0, result = 0;
+	unsigned int temp = 0, i = 0, count = 0, result = 0;
+	int j = 0;
 int (*ptr)(int, int) = _pow_recursion;
 
-	temp = va_arg(pa, int);
+	temp = (unsigned int)va_arg(pa, int);
 
 if (pa == NULL)
 	return (0);
-	
+
 while (i < temp)
 {
 	i += ptr(2, j);
@@ -52,8 +53,8 @@ while (i < temp)
 
 while (j >= 0)
 {
-	result = ptr(2, j);
-	if (ptr(2, j) <= temp && temp > 0)
+	result = (unsigned int)ptr(2, j);
+	if (result <= temp && temp > 0)
 	{
 		_putchar('1');
 		temp -= result;
