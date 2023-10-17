@@ -82,11 +82,7 @@ int _printf(const char *format, ...)
 	va_list pa;
 	int i = 0, j = 0, counter = 0;
 op_t identifier[] = {{"c", print_char}, {"s", print_string},
-<<<<<<< HEAD
 {"%", print_percentage}, {"i", print_integer}, {"d", print_double},
-=======
-{"%", print_percentage}, {"i", print_integer}, {"d", print_integer},
->>>>>>> 172ce85e0c83f9d0dfdccc1fa76e17e70e863e2c
 {"b", print_binary}
 };
 
