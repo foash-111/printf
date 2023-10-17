@@ -8,7 +8,7 @@ int print_integer(va_list pa)
 {
 	int len = 0, i = 0, j = 0;
 	int num = va_arg(pa, int);
-	long int number = num, temp;
+	int number = num, temp;
 	char *ptr;
 
 	if (number < 0)
@@ -50,7 +50,7 @@ int print_double(va_list pa)
 {
 	int len = 0, i = 0, j = 0;
 	int num = va_arg(pa, int);
-	long int number = num, temp;
+	int number = num, temp;
 	char *ptr;
 
 	if (number < 0)
