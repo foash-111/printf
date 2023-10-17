@@ -42,13 +42,3 @@ while (j < len)
 free(ptr);
 return (len);
 }
-
-/**
- * print_INT_MAX -...
- * @pa:pointer to argument
- * Return: integer
-*/
-int print_INT_MAX(va_list pa)
-{
-
-}
