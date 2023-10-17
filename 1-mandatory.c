@@ -82,14 +82,12 @@ int _printf(const char *format, ...)
 	va_list pa;
 	int i = 0, j = 0, counter = 0;
 op_t identifier[] = {{"c", print_char}, {"s", print_string},
-{"%", print_percentage}, {"d", print_integer},
-{"i", print_integer}, {"b", print_binary}};
+{"%", print_percentage},
+};
 
 	va_start(pa, format);
 	if (format == NULL)
 	return (-1);
-	else if (format[0] == '%' && format[1] == '\0')
-	_putchar('\0');
 	else
 	{
 	while (format[i])
