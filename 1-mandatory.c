@@ -82,8 +82,8 @@ int _printf(const char *format, ...)
 	va_list pa;
 	int i = 0, j = 0, counter = 0;
 op_t identifier[] = {{"c", print_char}, {"s", print_string},
-{"%", print_percentage},{"d" ,print_integer},{INT_MAX ,print_INT_MAX},{"i" ,print_integer},
-{"b", print_binary}};
+{"%", print_percentage}, {"d", print_integer}, {INT_MAX, print_INT_MAX},
+{"i", print_integer}, {"b", print_binary}};
 
 	va_start(pa, format);
 	if (format == NULL)
