@@ -51,7 +51,6 @@ while (ptr(2, j) < temp)
 
 }
 
-j--;
 
 while (j >= 0)
 {
