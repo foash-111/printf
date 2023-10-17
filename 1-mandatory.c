@@ -36,7 +36,7 @@ int print_percentage(va_list pa)
 /**
  * print_string - ...
  * @pa: pointer to argument
- * Return: (void)
+ * Return: int
  */
 int print_string(va_list pa)
 {
@@ -82,7 +82,7 @@ int _printf(const char *format, ...)
 	va_list pa;
 	int i = 0, j = 0, counter = 0;
 op_t identifier[] = {{"c", print_char}, {"s", print_string},
-{"%", print_percentage}, {"i", print_integer}, {"d", print_integer}
+{"%", print_percentage}, {"i", print_integer}, {"d", print_integer},
 {"b", print_binary}
 };
 
