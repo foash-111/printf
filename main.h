@@ -1,7 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#define INT_MAX 2147483647
 
 #include <unistd.h>
 #include<stdarg.h>
@@ -19,7 +18,6 @@ typedef struct operator
 	int (*fun)(va_list);
 } op_t;
 
-int print_INT_MAX(va_list pa);
 int _pow_recursion(int x, int y);
 int print_binary(va_list pa);
 int print_string(va_list pa);
