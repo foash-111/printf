@@ -7,6 +7,9 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+#define INT_MIN -2147483648
+#define INT_MAX 2147483647
+
 /**
  * struct operator - struct
  * @ch: char
@@ -24,9 +27,6 @@ int print_string(va_list pa);
 int print_percentage(va_list pa);
 int print_char(va_list pa);
 int print_integer(va_list pa);
-char *print_decimal(va_list pa);
-void rev_string(char *s);
-int _strlen(char *s);
 int _printf(const char *format, ...);
 int _putchar(char c);
 #endif
