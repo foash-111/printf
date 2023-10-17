@@ -42,7 +42,7 @@ int (*ptr)(int, int) = _pow_recursion;
 if (pa == NULL)
 	return (0);
 
-while (ptr(2, j) < temp)
+while (i < temp)
 {
 	i += ptr(2, j);
 	if (i >= temp)
@@ -50,7 +50,6 @@ while (ptr(2, j) < temp)
 	j++;
 
 }
-
 
 while (j >= 0)
 {

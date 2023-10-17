@@ -27,6 +27,7 @@ int print_string(va_list pa);
 int print_percentage(va_list pa);
 int print_char(va_list pa);
 int print_integer(va_list pa);
+int print_double(va_list pa);
 int _printf(const char *format, ...);
 int _putchar(char c);
 #endif
