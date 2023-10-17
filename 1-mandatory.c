@@ -45,7 +45,7 @@ int print_string(va_list pa)
 
 	ptr = va_arg(pa, char *);
 	if (pa == NULL)
-	ptr = "(null)";
+	(void) pa;
 
 	if (ptr != NULL)
 	{
