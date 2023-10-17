@@ -46,6 +46,7 @@ while (i < temp)
 {
 	j++;
 }
+j--;
 
 while (j >= 0)
 {
