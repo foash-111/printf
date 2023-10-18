@@ -45,7 +45,7 @@ int print_string(va_list pa)
 
 	ptr = va_arg(pa, char *);
 	if (pa == NULL)
-	(void) pa;
+	return (-1);
 
 	if (ptr != NULL)
 	{
@@ -87,7 +87,7 @@ op_t identifier[] = {{"c", print_char}, {"s", print_string},
 };
 
 	va_start(pa, format);
-	if (format == NULL)
+	if (format == NULL || pa == NULL)
 	return (-1);
 	else
 	{
