@@ -22,6 +22,8 @@ typedef struct operator
 int _pow_recursion(int x, int y);
 int print_binary(va_list pa);
 int print_string(va_list pa);
+void print_hexa(int num);
+int print_string_hexa(va_list pa);
 int print_percentage(va_list pa);
 int print_char(va_list pa);
 int print_integer(va_list pa);

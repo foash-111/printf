@@ -83,7 +83,7 @@ int _printf(const char *format, ...)
 	int i = 0, j = 0, counter = 0;
 op_t identifier[] = {{"c", print_char}, {"s", print_string},
 {"%", print_percentage}, {"i", print_integer}, {"d", print_double},
-{"b", print_binary}
+{"b", print_binary}, {"S", print_string_hexa}
 };
 
 	va_start(pa, format);
@@ -98,7 +98,7 @@ op_t identifier[] = {{"c", print_char}, {"s", print_string},
 		else
 		{
 			j = 0;
-			while (j < 6)
+			while (j < 7)
 			{
 				if (format[i + 1] == *identifier[j].ch)
 				{
@@ -107,7 +107,7 @@ op_t identifier[] = {{"c", print_char}, {"s", print_string},
 				}
 				j++;
 			}
-			if (j == 6)
+			if (j == 7)
 			return (-1);
 		}
 	i++;
