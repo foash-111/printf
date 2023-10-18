@@ -8,7 +8,7 @@ int print_integer(va_list pa)
 {
 	int len = 0, i = 0, j = 0;
 	int number = va_arg(pa, int);
-	unsigned int temp;
+	unsigned int temp, n;
 	char *ptr;
 
 	if (number < 0)
@@ -16,11 +16,15 @@ int print_integer(va_list pa)
 		_putchar('-');
 		 temp = -number;
 	}
+	else
+	{
 	temp = number;
+	}
+	n = temp;
 	do {
 		number /= 10;
 		len++;
-	} while (number != 0);
+	} while (n != 0);
 
 	ptr = malloc((sizeof(char) * len) + 1);
 	if (ptr == NULL)
