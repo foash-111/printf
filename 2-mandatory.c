@@ -7,14 +7,14 @@
 int print_integer(va_list pa)
 {
 	int len = 0, i = 0, j = 0;
-	long int num = va_arg(pa, int);
-	long int number = num, temp;
+	int number = va_arg(pa, int);
+	unsigned int temp;
 	char *ptr;
 
 	if (number < 0)
 	{
 		_putchar('-');
-		number = -number;
+		 temp = -number;
 	}
 	temp = number;
 	do {
