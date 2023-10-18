@@ -40,12 +40,12 @@ int (*ptr)(int, int) = _pow_recursion;
 	temp = (unsigned int)va_arg(pa, int);
 
 if (pa == NULL)
-	return (0);
+return (0);
 
 if (temp == 0)
 {
- _putchar('0');
- return (1);
+	_putchar('0');
+	return (1);
 }
 while (i < temp)
 {
